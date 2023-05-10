@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Majorissueset" targetNamespace="http://tempuri.org/Majorissueset.xsd" xmlns:mstns="http://tempuri.org/Majorissueset.xsd" xmlns="http://tempuri.org/Majorissueset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="con_str" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="con_str (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.con_str.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DowndetailTableAdapter" GeneratorDataComponentClassName="DowndetailTableAdapter" Name="Downdetail" UserDataComponentName="DowndetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="con_str (Web.config)" DbObjectName="DownTime.dbo.Downdetail" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        A_End, B_End, NOC_Open, NOC_Close, LLDown_Date, LLDown_Time, Report_Agency, LLUP_Date, LLUP_Time, Reason, TotalDown_Time, Remark, Docket_No, 
+                         TotalMin
+FROM            Downdetail
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="A_End" DataSetColumn="A_End" />
+              <Mapping SourceColumn="B_End" DataSetColumn="B_End" />
+              <Mapping SourceColumn="NOC_Open" DataSetColumn="NOC_Open" />
+              <Mapping SourceColumn="NOC_Close" DataSetColumn="NOC_Close" />
+              <Mapping SourceColumn="LLDown_Date" DataSetColumn="LLDown_Date" />
+              <Mapping SourceColumn="LLDown_Time" DataSetColumn="LLDown_Time" />
+              <Mapping SourceColumn="Report_Agency" DataSetColumn="Report_Agency" />
+              <Mapping SourceColumn="LLUP_Date" DataSetColumn="LLUP_Date" />
+              <Mapping SourceColumn="LLUP_Time" DataSetColumn="LLUP_Time" />
+              <Mapping SourceColumn="Reason" DataSetColumn="Reason" />
+              <Mapping SourceColumn="TotalDown_Time" DataSetColumn="TotalDown_Time" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+              <Mapping SourceColumn="Docket_No" DataSetColumn="Docket_No" />
+              <Mapping SourceColumn="TotalMin" DataSetColumn="TotalMin" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Majorissueset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="False" msprop:Generator_DataSetName="Majorissueset" msprop:Generator_UserDSName="Majorissueset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Downdetail" msprop:Generator_TableClassName="DowndetailDataTable" msprop:Generator_TableVarName="tableDowndetail" msprop:Generator_RowChangedName="DowndetailRowChanged" msprop:Generator_TablePropName="Downdetail" msprop:Generator_RowDeletingName="DowndetailRowDeleting" msprop:Generator_RowChangingName="DowndetailRowChanging" msprop:Generator_RowEvHandlerName="DowndetailRowChangeEventHandler" msprop:Generator_RowDeletedName="DowndetailRowDeleted" msprop:Generator_RowClassName="DowndetailRow" msprop:Generator_UserTableName="Downdetail" msprop:Generator_RowEvArgName="DowndetailRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="A_End" msprop:Generator_ColumnVarNameInTable="columnA_End" msprop:Generator_ColumnPropNameInRow="A_End" msprop:Generator_ColumnPropNameInTable="A_EndColumn" msprop:Generator_UserColumnName="A_End">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="B_End" msprop:Generator_ColumnVarNameInTable="columnB_End" msprop:Generator_ColumnPropNameInRow="B_End" msprop:Generator_ColumnPropNameInTable="B_EndColumn" msprop:Generator_UserColumnName="B_End">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOC_Open" msprop:Generator_ColumnVarNameInTable="columnNOC_Open" msprop:Generator_ColumnPropNameInRow="NOC_Open" msprop:Generator_ColumnPropNameInTable="NOC_OpenColumn" msprop:Generator_UserColumnName="NOC_Open" type="xs:duration" />
+              <xs:element name="NOC_Close" msprop:Generator_ColumnVarNameInTable="columnNOC_Close" msprop:Generator_ColumnPropNameInRow="NOC_Close" msprop:Generator_ColumnPropNameInTable="NOC_CloseColumn" msprop:Generator_UserColumnName="NOC_Close" type="xs:duration" />
+              <xs:element name="LLDown_Date" msprop:Generator_ColumnVarNameInTable="columnLLDown_Date" msprop:Generator_ColumnPropNameInRow="LLDown_Date" msprop:Generator_ColumnPropNameInTable="LLDown_DateColumn" msprop:Generator_UserColumnName="LLDown_Date" type="xs:dateTime" />
+              <xs:element name="LLDown_Time" msprop:Generator_ColumnVarNameInTable="columnLLDown_Time" msprop:Generator_ColumnPropNameInRow="LLDown_Time" msprop:Generator_ColumnPropNameInTable="LLDown_TimeColumn" msprop:Generator_UserColumnName="LLDown_Time" type="xs:duration" />
+              <xs:element name="Report_Agency" msprop:Generator_ColumnVarNameInTable="columnReport_Agency" msprop:Generator_ColumnPropNameInRow="Report_Agency" msprop:Generator_ColumnPropNameInTable="Report_AgencyColumn" msprop:Generator_UserColumnName="Report_Agency">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LLUP_Date" msprop:Generator_ColumnVarNameInTable="columnLLUP_Date" msprop:Generator_ColumnPropNameInRow="LLUP_Date" msprop:Generator_ColumnPropNameInTable="LLUP_DateColumn" msprop:Generator_UserColumnName="LLUP_Date" type="xs:dateTime" />
+              <xs:element name="LLUP_Time" msprop:Generator_ColumnVarNameInTable="columnLLUP_Time" msprop:Generator_ColumnPropNameInRow="LLUP_Time" msprop:Generator_ColumnPropNameInTable="LLUP_TimeColumn" msprop:Generator_UserColumnName="LLUP_Time" type="xs:duration" />
+              <xs:element name="Reason" msprop:Generator_ColumnVarNameInTable="columnReason" msprop:Generator_ColumnPropNameInRow="Reason" msprop:Generator_ColumnPropNameInTable="ReasonColumn" msprop:Generator_UserColumnName="Reason">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalDown_Time" msprop:Generator_ColumnVarNameInTable="columnTotalDown_Time" msprop:Generator_ColumnPropNameInRow="TotalDown_Time" msprop:Generator_ColumnPropNameInTable="TotalDown_TimeColumn" msprop:Generator_UserColumnName="TotalDown_Time">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Docket_No" msprop:Generator_ColumnVarNameInTable="columnDocket_No" msprop:Generator_ColumnPropNameInRow="Docket_No" msprop:Generator_ColumnPropNameInTable="Docket_NoColumn" msprop:Generator_UserColumnName="Docket_No" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalMin" msprop:Generator_ColumnVarNameInTable="columnTotalMin" msprop:Generator_ColumnPropNameInRow="TotalMin" msprop:Generator_ColumnPropNameInTable="TotalMinColumn" msprop:Generator_UserColumnName="TotalMin" type="xs:long" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

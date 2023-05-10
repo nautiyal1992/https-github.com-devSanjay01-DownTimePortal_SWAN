@@ -1,0 +1,282 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="UserMaster, App_Web_1hrphx1l" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script src="Scripts/Time.js" type="text/javascript"></script>
+    <title>UKSWAN DownTimePortal</title>
+    <script type="text/javascript">
+    function chkTime(timeStr)
+ {
+var timRegX = /^(\d{1,2}):(\d{2}):(\d{2})?$/;
+var timArr = timeStr.match(timRegX);
+if (timArr == null) 
+{
+alert("Time is not in a valid format.");
+return false;
+}
+hour = timArr[1];
+minute = timArr[2];
+second = timArr[2];
+if (hour < 0 || hour > 23)
+{
+alert("Hour must be between 1 and 12. (or 0 and 23 for military time)");
+return false;
+}
+
+if (minute < 0 || minute > 59)
+ {
+alert ("Minute must be between 0 and 59.");
+return false;
+}
+if (second < 0 || second > 59) {
+    alert("Minute must be between 0 and 59.");
+    return false;
+}
+
+return false;
+}
+</script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+  
+    <link href="Styles/layout.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/style.css" rel="stylesheet" type="text/css" />
+    <style type="text/css" media="screen">
+        body
+        {
+           margin-top:0;
+           margin-bottom:0;
+           margin-left:0;
+           margin-right:0; 
+        }
+       .tbhd
+       {
+           padding-top:5px;
+           padding-bottom:5px;
+           text-align:center;
+           font-size:medium;
+           font-weight:bold;
+           background-color:#99CC00;
+           
+          
+        }
+        #table1
+        {
+           margin-top:0;
+           margin-bottom:0;
+           margin-left:0;
+           margin-right:0;
+           border:0;
+        }
+       #nav
+      {
+          line-height:30px;
+          float:left;
+          font-size:medium;
+          text-transform:uppercase;
+          height:100%;
+          width:inherit;
+          position:fixed;
+          background-color:#DCDCDC;
+          text-align:center;
+          color:Blue;
+          padding-left:1px;
+          
+      }
+    
+      #section
+      {
+          padding-left:150px;
+          width:88%;
+          float:left;
+          padding-bottom:50px;
+      }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div  id="header">  <h1 style="text-align:center;" class="show">Down Time Entry</h1></div>
+   
+    <div id="nav">
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder9" runat="server">
+                        <asp:TreeView ID="TreeView1" runat="server" Font-Size="Small" NodeIndent="10">
+                            <HoverNodeStyle Font-Underline="False" 
+                                BackColor="#FFFF66"  />
+                            <LeafNodeStyle BackColor="Gainsboro" />
+                            <Nodes>
+                                <asp:TreeNode NavigateUrl="~/Admin/AccountRequest.aspx" Text="Account" 
+                                    Value="Account"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/SearchDownTime.aspx" Text="Search Reports" 
+                                    Value="Search Reports">
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Add Link Type" Value="Add Link Type" 
+                                    NavigateUrl="~/Admin/Linktype.aspx">
+                                </asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Admin/AddPop.aspx" Text="Add POP" Value="Add POP">
+                                </asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Admin/EditPOP.aspx" Text="Update/Delete POP" 
+                                    Value="Update/Delete POP"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Admin/Majorreport.aspx" Text="Report Generate" 
+                                    Value="Generate"></asp:TreeNode>
+                            </Nodes>
+                            <NodeStyle Font-Names="Verdana" Font-Size="8pt" 
+                                HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" 
+                                BackColor="White" />
+                            <ParentNodeStyle Font-Bold="True" ForeColor="#5555DD" />
+                            <RootNodeStyle ForeColor="Black" />
+                            <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" 
+                                VerticalPadding="0px" />
+                        </asp:TreeView>
+                    </asp:ContentPlaceHolder>
+                     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
+                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                   
+                     </div>
+                    <div id="section">
+         <table id="table1" width="100%" cellpadding="0" cellspacing="0">
+              <tr style="width:80px;">
+                    <td class="tbhd">
+                    Welcome User :<asp:ContentPlaceHolder ID="ContentPlaceHolder11" runat="server">
+                        <asp:Label ID="Label1" runat="server" Text="Guest"></asp:Label>
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td class="tbhd">
+                    DHQ/SHQ Name :<asp:ContentPlaceHolder 
+                        ID="ContentPlaceHolder12" runat="server">
+                        <asp:Label ID="Label2" runat="server" Text="Dehradun"></asp:Label>
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td class="tbhd">
+                    POP Name :
+                    &nbsp;<asp:ContentPlaceHolder ID="ContentPlaceHolder14" runat="server">
+                        <asp:Label ID="Label10" runat="server" Text="Dehradun"></asp:Label>
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder13" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td class="tbhd" >
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder7" runat="server">
+                        <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Logout</asp:LinkButton>
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="style1" colspan="4" rowspan="0">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder8" runat="server">
+                        <table style="width:100%;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td id="htd">
+                                    A-End</td>
+                                <td id="htd">
+                                    B-End</td>
+                                <td id="htd">
+                                    Bandwidth</td>
+                                <td id="htd">
+                                    NOC Open Time</td>
+                                <td id="htd">
+                                    NOC Close Time</td>
+                                <td id="htd">
+                                    LL Down Date</td>
+                                <td id="htd">
+                                    LL Down Time</td>
+                                <td id="htd">
+                                    Report to Agency</td>
+                                <td id="htd" >
+                                    LL UP Date</td>
+                                <td id="htd">
+                                    LL UP Time</td>
+                                <td id="htd">
+                                    Reason</td>
+                                <td id="htd">
+                                    Total Time</td>
+                                <td id="htd">
+                                    Remark</td>
+                                <td id="htd">
+                                    Docket No(IF)</td>
+                            </tr>
+                            <tr>
+                                <td id="ctd">
+                                    <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                                </td>
+                                <td id="ctd">
+                                    <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+                                </td>
+                                <td id="ctd">
+                                    <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+                                </td>
+                                <td id="ctd">
+                                    <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
+                                </td>
+                                <td id="ctd">
+                                    <asp:Label ID="Label9" runat="server" Text="Label"></asp:Label>
+                                </td>
+                                <td id="ctd">
+                                    <asp:TextBox ID="TextBox6" runat="server" TextMode="Date"></asp:TextBox>
+                                </td>
+                                <td id="ctd">
+                                    <asp:TextBox ID="TextBox1" runat="server" TextMode="Time" Width="100%"></asp:TextBox>
+                                </td>
+                                <td id="ctd">
+                                    <asp:TextBox ID="TextBox2" runat="server" Width="50px">NA</asp:TextBox>
+                                </td>
+                                <td id="ctd">
+                                    <asp:TextBox ID="TextBox7" runat="server" TextMode="Date"></asp:TextBox>
+                                </td>
+                                <td id="ctd">
+                                    <asp:TextBox ID="TextBox3" runat="server"  TextMode="Time" 
+                                        Width="100%"></asp:TextBox>
+                                </td>
+                                <td id="ctd">
+                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                        <asp:ListItem>Reason</asp:ListItem>
+                                        <asp:ListItem>R1</asp:ListItem>
+                                        <asp:ListItem>R2</asp:ListItem>
+                                        <asp:ListItem>R3</asp:ListItem>
+                                        <asp:ListItem>R4</asp:ListItem>
+                                        <asp:ListItem>R5</asp:ListItem>
+                                        <asp:ListItem>R6</asp:ListItem>
+                                        <asp:ListItem>R7</asp:ListItem>
+                                        <asp:ListItem>R8</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                                <td id="ctd">
+                                    <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+                                </td>
+                                <td id="ctd">
+                                    <asp:TextBox ID="TextBox4" runat="server"  TextMode="MultiLine"></asp:TextBox>
+                                </td>
+                                <td id="ctd">
+                                    <asp:TextBox ID="TextBox5" runat="server" ></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="style5" colspan="14">
+                                    <asp:Button ID="Button1" runat="server" Text="Entry Down Time" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style5" colspan="14">
+                                    <asp:GridView ID="GridView1" runat="server" Width="100%">
+                                    </asp:GridView>
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+            <td rowspan="0">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder10" runat="server">
+                    </asp:ContentPlaceHolder></td></tr>
+        </table></div>
+     <div id="footer">
+        Copyright &copy UKSWAN Uttarakhand 2018</div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Reasonsumry" targetNamespace="http://tempuri.org/Reasonsumry.xsd" xmlns:mstns="http://tempuri.org/Reasonsumry.xsd" xmlns="http://tempuri.org/Reasonsumry.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Reasonsumry" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Reasonsumry" msprop:Generator_DataSetName="Reasonsumry">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Reaon" msprop:Generator_TableClassName="ReaonDataTable" msprop:Generator_TableVarName="tableReaon" msprop:Generator_TablePropName="Reaon" msprop:Generator_RowDeletingName="ReaonRowDeleting" msprop:Generator_RowChangingName="ReaonRowChanging" msprop:Generator_RowEvHandlerName="ReaonRowChangeEventHandler" msprop:Generator_RowDeletedName="ReaonRowDeleted" msprop:Generator_UserTableName="Reaon" msprop:Generator_RowChangedName="ReaonRowChanged" msprop:Generator_RowEvArgName="ReaonRowChangeEvent" msprop:Generator_RowClassName="ReaonRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SNo" msprop:Generator_ColumnVarNameInTable="columnSNo" msprop:Generator_ColumnPropNameInRow="SNo" msprop:Generator_ColumnPropNameInTable="SNoColumn" msprop:Generator_UserColumnName="SNo" type="xs:string" minOccurs="0" />
+              <xs:element name="TPOP" msprop:Generator_ColumnVarNameInTable="columnTPOP" msprop:Generator_ColumnPropNameInRow="TPOP" msprop:Generator_ColumnPropNameInTable="TPOPColumn" msprop:Generator_UserColumnName="TPOP" type="xs:int" minOccurs="0" />
+              <xs:element name="R1" msprop:Generator_ColumnVarNameInTable="columnR1" msprop:Generator_ColumnPropNameInRow="R1" msprop:Generator_ColumnPropNameInTable="R1Column" msprop:Generator_UserColumnName="R1" type="xs:int" minOccurs="0" />
+              <xs:element name="R2" msprop:Generator_ColumnVarNameInTable="columnR2" msprop:Generator_ColumnPropNameInRow="R2" msprop:Generator_ColumnPropNameInTable="R2Column" msprop:Generator_UserColumnName="R2" type="xs:int" minOccurs="0" />
+              <xs:element name="R3" msprop:Generator_ColumnVarNameInTable="columnR3" msprop:Generator_ColumnPropNameInRow="R3" msprop:Generator_ColumnPropNameInTable="R3Column" msprop:Generator_UserColumnName="R3" type="xs:int" minOccurs="0" />
+              <xs:element name="R4" msprop:Generator_ColumnVarNameInTable="columnR4" msprop:Generator_ColumnPropNameInRow="R4" msprop:Generator_ColumnPropNameInTable="R4Column" msprop:Generator_UserColumnName="R4" type="xs:int" minOccurs="0" />
+              <xs:element name="R5" msprop:Generator_ColumnVarNameInTable="columnR5" msprop:Generator_ColumnPropNameInRow="R5" msprop:Generator_ColumnPropNameInTable="R5Column" msprop:Generator_UserColumnName="R5" type="xs:int" minOccurs="0" />
+              <xs:element name="R6" msprop:Generator_ColumnVarNameInTable="columnR6" msprop:Generator_ColumnPropNameInRow="R6" msprop:Generator_ColumnPropNameInTable="R6Column" msprop:Generator_UserColumnName="R6" type="xs:int" minOccurs="0" />
+              <xs:element name="R7" msprop:Generator_ColumnVarNameInTable="columnR7" msprop:Generator_ColumnPropNameInRow="R7" msprop:Generator_ColumnPropNameInTable="R7Column" msprop:Generator_UserColumnName="R7" type="xs:int" minOccurs="0" />
+              <xs:element name="R8" msprop:Generator_ColumnVarNameInTable="columnR8" msprop:Generator_ColumnPropNameInRow="R8" msprop:Generator_ColumnPropNameInTable="R8Column" msprop:Generator_UserColumnName="R8" type="xs:int" minOccurs="0" />
+              <xs:element name="MultiR" msprop:Generator_ColumnVarNameInTable="columnMultiR" msprop:Generator_ColumnPropNameInRow="MultiR" msprop:Generator_ColumnPropNameInTable="MultiRColumn" msprop:Generator_UserColumnName="MultiR" type="xs:int" minOccurs="0" />
+              <xs:element name="NetPOP" msprop:Generator_ColumnVarNameInTable="columnNetPOP" msprop:Generator_ColumnPropNameInRow="NetPOP" msprop:Generator_ColumnPropNameInTable="NetPOPColumn" msprop:Generator_UserColumnName="NetPOP" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

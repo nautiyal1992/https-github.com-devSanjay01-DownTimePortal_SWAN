@@ -1,0 +1,85 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="SiteMaster, App_Web_1hrphx1l" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>UKSWAN DownTimePortal</title>
+    <link href="Styles/layout.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/menu.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/style.css" rel="stylesheet" type="text/css" />
+    <style type="text/css" media="screen">
+       
+        #nav
+        {
+            line-height: 30px;
+            float: left;
+            font-size: medium;
+            text-transform: uppercase;
+            height: 0%;
+            width: inherit;
+            position: fixed;
+            background-color: #DCDCDC;
+            text-align: center;
+            color: Blue;
+            text-align: center;
+            top: 73px;
+            left: 0px;
+        }
+        #section
+        {
+            padding-left: 150px;
+            width: 88%;
+            float: left;
+            padding-bottom: 50px;
+            vertical-align: bottom;
+        }
+      
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div id="header">
+        <h1 style="text-align: center;" class="show">
+            WELCOME TO SWAN Uttarakhand DOWN-TIME Portal</h1>
+    </div>
+    <div id="nav">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <asp:TreeView ID="TreeView1" runat="server" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                <HoverNodeStyle BackColor="#FFFF66" ForeColor="Black" />
+                <Nodes>
+                    <asp:TreeNode NavigateUrl="~/Account/Login.aspx" Text="Login" Value="Login"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/Account/SignUp.aspx" Text="SignUp" Value="Signup"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/Account/FogotPassword.aspx" Text="Forgot Password" Value="Forgot Password">
+                    </asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/Account/ChangePassword.aspx" Text="Change Password"
+                        Value="Change Password"></asp:TreeNode>
+                </Nodes>
+            </asp:TreeView>
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="section">
+        <table style="width: 100%;">
+            <tr>
+                <td align="right">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                       </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="footer">
+        Copyright &copy UKSWAN Uttarakhand 2018</div>
+    </form>
+</body>
+</html>
