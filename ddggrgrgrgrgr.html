@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governor's Digital Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background_image_path.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 50, 0.8);
+            position: relative;
+        }
+
+        .menu-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            display: none;
+        }
+
+        aside {
+            width: 250px;
+            background-color: rgba(0, 0, 50, 0.7);
+            padding: 20px;
+            position: fixed;
+            top: 80px;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        aside.show {
+            transform: translateX(0);
+        }
+
+        .app-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .app-list li {
+            margin: 15px 0;
+        }
+
+        .app-list li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 15px;
+            display: block;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .app-list li a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        main {
+            margin-left: 250px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .slider {
+            width: 80%;
+            height: 70%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 50, 0.8);
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .slide img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .slide h2 {
+            margin: 10px 0;
+        }
+
+        .slide p {
+            font-size: 1.2em;
+        }
+
+        .slide button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .slide button:hover {
+            background-color: #e64a19;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            margin-top: -70px;
+            padding: 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            outline: none;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 1);
+        }
+
+        .back-btn {
+            padding: 10px 20px;
+            background-color: #2196f3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #1976d2;
+        }
+
+        @media (max-width: 768px) {
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            main {
+                margin-left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .voice-control {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .voice-control button {
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .voice-control button:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <h1>Governor's Digital Hub</h1>
+        </header>
+        <aside id="side-menu">
+            <ul class="app-list">
+                <li><a href="#">App Name 1</a></li>
+                <li><a href="#">App Name 2</a></li>
+                <li><a href="#">App Name 3</a></li>
+                <li><a href="#">App Name 4</a></li>
+                <li><a href="#">App Name 5</a></li>
+                <li><a href="#">App Name 6</a></li>
+                <li><a href="#">App Name 7</a></li>
+                <li><a href="#">App Name 8</a></li>
+                <li><a href="#">App Name 9</a></li>
+                <li><a href="#">App Name 10</a></li>
+                <li><a href="#">App Name 11</a></li>
+                <li><a href="#">App Name 12</a></li>
+                <li><a href="#">App Name 13</a></li>
+                <li><a href="#">App Name 14</a></li>
+                <li><a href="#">App Name 15</a></li>
+            </ul>
+        </aside>
+        <main>
+            <button class="back-btn" onclick="goBack()">Back</button>
+            <div class="slider">
+                <div class="slide">
+                    <img src="apple_logo.png" alt="App Logo">
+                    <h2>mAitri</h2>
+                    <button onclick="openApp()">Open App</button>
+                    <p>Governor's Bot</p>
+                </div>
+                <!-- Repeat the slide structure as needed -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </main>
+        <div class="voice-control">
+            <button onclick="activateVoiceControl()">Voice Control</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.toggle('show');
+        }
+
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 2000); // Change slide every 2 seconds
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function openApp() {
+            alert('Opening App...');
+            // Add code to open the app or redirect to its page
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function activateVoiceControl() {
+            alert('Voice Control Activated');
+            // Add code to handle voice control
+        }
+    </script>
+</body>
+</html>
